@@ -1,0 +1,17 @@
+{
+  "name": "gustave",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mic": "^2.1.1",
+    "node-record-lpcm16": "^0.3.0",
+    "rpi-sk6812-native": "^0.9.1",
+    "snowboy-detect": "^1.0.5"
+  }
+}
