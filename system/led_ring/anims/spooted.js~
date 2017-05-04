@@ -1,0 +1,25 @@
+var stripe = require('rpi-sk6812-native');                                                                                                                                                                                  
+
+function sleep (time) {
+    return new Promise((resolve) => {
+	setTimeout(() => resolve(), time)
+    })
+}
+
+function timeout(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function sleep(fn, ...args) {
+    await timeout(3000);
+    return fn(...args);
+}
+
+module.exports = async () => {
+    stripe.setBrightness(255);
+    for (var i = 0; i < stripe.LED_COUNT; i++) {
+	stripe.pixelData[i] = 
+	await timeout(100)
+    }
+
+//    stripe.render(stripe.pixelData);
+}

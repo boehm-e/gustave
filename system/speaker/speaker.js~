@@ -1,0 +1,27 @@
+phrase = "coucou tout le monde comment allez vous?"
+var url = "http://voice2.reverso.net/RestPronunciation.svc/v1/output=json/GetVoiceStream/voiceName=Claire22k?inputText="+new Buffer(phrase.toString()).toString('base64')+"&voiceSpeed=95&mp3BitRate=128";
+//var url = "http://www.youtube-mp3.org/get?video_id=KMU0tzLwhbE&ts_create=1493917658&r=ODUuNjkuMjQuMTkw&h2=5ffaeb831c551786d35b6744c7da65a2&s=50787"
+
+var request = require("request");
+var lame = require('lame');
+var Speaker = require('speaker');
+var fs = require('fs');
+var audioOptions = {channels: 1, bitDepth: 16, sampleRate: 44100};
+var decoder = lame.Decoder();
+
+
+var stream = request(url).pipe(decoder).on("format", function (format) {
+    console.log(format)
+    this.pipe(new Speaker({
+	    raw_encoding: 208,
+	  sampleRate: 22050,
+	  channels: 2,
+	  signed: true,
+	  float: false,
+	  ulaw: false,
+	  alaw: false,
+	  bitDepth: 16
+	}))
+}).on("data", function (data) {
+    console.log(data)
+})

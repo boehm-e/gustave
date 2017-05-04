@@ -9,9 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fluent-ffmpeg": "^2.1.2",
+    "lame": "^1.2.4",
     "mic": "^2.1.1",
     "node-record-lpcm16": "^0.3.0",
     "rpi-sk6812-native": "^0.9.1",
-    "snowboy-detect": "^1.0.5"
+    "snowboy-detect": "^1.0.5",
+    "speaker": "^0.3.0"
   }
 }

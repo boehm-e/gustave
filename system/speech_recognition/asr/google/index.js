@@ -99,7 +99,8 @@ var events = require('events'),
 
             this.up = this.https.request(options);
             this.up.on('error', function (error) {
-                throw new Error(error);
+		console.log("ERROR : ",error);
+		//                throw new Error(error);
             });
         };
 

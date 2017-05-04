@@ -1,5 +1,6 @@
 const EventEmitter = require('events');
 const record = require('node-record-lpcm16');
+const path = require('path');
 const speaking = new EventEmitter();
 
 var asr;
@@ -10,14 +11,15 @@ var beginDate;
 // NEW MESSAGE LISTNER FROM GOOGLE SPEECH API
 const onData = function (data) {
     try {
-	lastMsg = data.message.result[0].alternative[0].transcript;
+	console.log("lastMsg : ", lastMsg);
 	newLastDate = Date.now();
+	let RealLastMsg  = data.message.result[0].alternative[0].transcript;
 	let diff = newLastDate - lastDate;
 	let timeFromBegining = newLastDate - beginDate;
-	if (diff > 500 && timeFromBegining > 1500) {
-	    speaking.emit('end', lastMsg);
+	if (diff > 500 && timeFromBegining > 1500 && lastMsg != "") {
+	    speaking.emit('end', RealLastMsg);
 	}
-	
+	lastMsg = data.message.result[0].alternative[0].transcript;
 	lastDate = newLastDate;
     } catch(e) {
     }
@@ -31,6 +33,7 @@ const onError = function (error) {
 
 // START SPEECH RECOGNITION FUNCTION
 const begin = () => {
+    var lastMsg = "";
     lastDate = beginDate = Date.now();
     if (asr) {
 	asr.removeListener('data', onData);
@@ -60,7 +63,13 @@ const stop = () => {
 
 }
 
+const reset = () => {
+    delete require.cache[path.resolve('./asr/google')];
+    asr = require('./asr/google/');
+}
+
 exports.strm = strm;
 exports.begin = begin;
 exports.stop = stop;
 exports.speaking = speaking;
+exports.reset = reset;
