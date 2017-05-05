@@ -1,3 +1,8 @@
-const speech_recognition = require('./system/speech_recognition/speech');
+const Gustave = require('./core/gustave');
 
-speech_recognition.start();
+(async () => {
+
+    await Gustave.init();
+    Gustave.system.speech_recognition.start();
+
+})()
