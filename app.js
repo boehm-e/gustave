@@ -1,8 +1,16 @@
-const Gustave = require('./core/gustave');
+const gustave = global.gustave = require('./core/gustave');
 
-(async () => {
+console.log("HERE");
+// Initializing gustave system modules
+gustave.init();
+// Starting speech recognition module
+gustave.system.speech_recognition.start();
 
-    await Gustave.init();
-    Gustave.system.speech_recognition.start();
+gustave.system.speech_recognition.speaking.on('end', function(intent) {
+  gustave.ask(intent)
+})
 
-})()
+
+// gustave.system.led.anim.loading.start()
+//gustave.ask("qui est Michel Sardou?")
+// gustave.modules.music()

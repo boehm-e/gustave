@@ -1,18 +1,38 @@
 {
   "name": "gustave",
   "version": "1.0.0",
-  "description": "",
+  "description": "Gustave is a french speech controled personal assistant",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "sudo node app.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boehm-e/gustave.git"
+  },
+  "keywords": [
+    "speech",
+    "nlp",
+    "french",
+    "assistant"
+  ],
+  "author": "Erwan & Steven BOEHM",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boehm-e/gustave/issues"
+  },
+  "homepage": "https://github.com/boehm-e/gustave#readme",
   "dependencies": {
-    "fluent-ffmpeg": "^2.1.2",
+    "cheerio": "^1.0.0-rc.1",
+    "event-emitter": "^0.3.5",
     "lame": "^1.2.4",
     "mic": "^2.1.1",
+    "natural": "^0.5.1",
     "node-record-lpcm16": "^0.3.0",
+    "observable-array": "0.0.4",
+    "pify": "^3.0.0",
+    "playmusic": "^2.2.1",
+    "request": "^2.81.0",
     "rpi-sk6812-native": "^0.9.1",
     "snowboy-detect": "^1.0.5",
     "speaker": "^0.3.0"

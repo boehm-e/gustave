@@ -1,0 +1,14 @@
+[
+    {"text":"donne-moi les news de Futura-sciences","label":"news-futurasciences"},
+    {"text":"quelles sont les actualités de Futura-sciences","label":"news-futurasciences"},
+    {"text":"info de Futura-sciences","label":"news-futurasciences"},
+
+    {"text":"donne-moi les news du 20 minutes","label":"news-20minutes"},
+    {"text":"quelles sont les actualités du 20 minutes","label":"news-20minutes"},
+    {"text":"info du 20 minutes","label":"news-20minutes"},
+
+    {"text":"donne-moi les news de BFM","label":"news-bfm"},
+    {"text":"quelles sont les actualités de BFM","label":"news-bfm"},
+    {"text":"info de BFM","label":"news-bfm"}
+
+]

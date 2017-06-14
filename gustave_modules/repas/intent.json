@@ -1,0 +1,11 @@
+[
+    {"text":"qu'est-ce que je peux manger ce midi","label":"repas-midi"},
+    {"text":"donne-moi une idée de recette pour ce midi","label":"repas-midi"},
+
+    {"text":"qu'est-ce que je peux manger ce soir","label":"repas-soir"},
+    {"text":"donne-moi une idée de recette pour ce soir","label":"repas-soir"},
+
+    {"text":"qu'est-ce que je peux manger","label":"repas-default"},
+    {"text":"donne-moi une idée de recette","label":"repas-default"},
+    {"text":"donne-moi une idée de repas","label":"repas-default"}
+]

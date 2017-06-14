@@ -1,9 +1,8 @@
-var stripe = require('rpi-sk6812-native');
+const  stripe = require('rpi-sk6812-native');
+
 stripe.LED_COUNT = 31;
 stripe.pixelData = new Uint32Array(stripe.LED_COUNT);
-stripe.rgb2Int = (r, g, b) => {
-    return ((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff);
-}
+stripe.rgb2Int = (r, g, b) => ((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff)
 stripe.clear = () => {
     for (var i = 0; i < stripe.LED_COUNT; i++) {
 	stripe.pixelData[i] = stripe.rgb2Int(0,0,0);
@@ -16,6 +15,7 @@ stripe.init(stripe.LED_COUNT, {
 //    frequency:  19200000
 });
 
+stripe.setBrightness(50);
 
 const loading = require('./anims/loading');
 const spooted = require('./anims/spooted');
