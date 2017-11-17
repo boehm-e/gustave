@@ -1,4 +1,10 @@
 [
-    {"text":"écouter mes musiques favorites","label":"music-favorite"},
-    {"text":"écouter another brick in the wall","label":"music-listen"}
+    {"text":"écouter ####","label":"music-playSong"},
+    {"text":"écoutez ####","label":"music-playSong"},
+    {"text":"mets de la musique", "label":"music-playSong"},
+    {"text":"coupe le son","label":"music-killSong"},
+    {"text":"stop le son","label":"music-killSong"},
+    {"text":"stop la musique","label":"music-killSong"},
+    {"text":"arrête la musique","label":"music-killSong"},
+    {"text":"arrête le son","label":"music-killSong"}
 ]

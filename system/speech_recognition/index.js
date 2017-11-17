@@ -46,7 +46,7 @@ hotWordDetector.on('hotword', index => {
       googleSpeech.begin();
       speechRec = true;
       ledRing.anim.loading.start();
-    }, 400)
+    }, 0)
   }
 });
 

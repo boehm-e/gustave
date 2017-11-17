@@ -55,7 +55,9 @@ exports.init = () => {
 exports.ask = async (question) => {
     var label = classifier.classify(question).split('-')[0];
     var subLabel = classifier.classify(question).split('-')[1] || null;
+    console.log(label, subLabel)
     var res = gustaveModules[label];
+    console.log(res)
     const result = await res.start(subLabel, question);
     console.log("RESPONSE : ", result)
     if (result instanceof Object && result.tts) {

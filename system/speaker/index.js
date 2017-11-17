@@ -16,7 +16,6 @@ const playQueue = () => {
 	const decoder = lame.Decoder();
 	const url = queue[0]
 	const stream = request(url);
-
 	stream.pipe(decoder).on("format", function (format) {
 	    if (format.channels == 1) {
 		format.channels = 2
