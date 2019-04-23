@@ -83,7 +83,7 @@ example: we will create a module name say:
 	`touch say.js intent.json`
 
 3. edit intent.json
-```
+```javascript
 [
     {"text":"say hello","label":"say-hello"},
     {"text":"please say hi","label":"say-hello"},
@@ -93,7 +93,7 @@ example: we will create a module name say:
 ```
 
 4. edit say.js
-```
+```javascript
 var thisModule = 'say';
 
 // module needed
